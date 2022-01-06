@@ -1,0 +1,27 @@
+<h1 style="text-transform: capitalize;">{{ this.namaMenu }}</h1>
+<form [formGroup]="todoListForm" (ngSubmit)="onSubmit()">
+  <div class="row">
+    <div class="col-6">
+      <div class="mb-3">
+        <label for="" class="form-label">Tambahkan Todo</label>
+        <input type="text" class="form-control" formControlName="todoName" placeholder="Baca Buku">
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="mb-3">
+        <label for="" class="form-label">Tanggal</label>
+        <input type="datetime-local" class="form-control" formControlName="todoDate" id="" placeholder="Baca Buku">
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="mb-3" style="text-align: right;">
+    <button type="submit" class="btn btn-primary">Simpan</button>
+  </div>
+</form>
+<hr>
+<ul class="list-group" *ngFor="let todo of this.todolist">
+  <li class="list-group-item">{{ todo["nama_todo"] }}</li>
+</ul>

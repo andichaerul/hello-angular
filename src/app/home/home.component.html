@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-3 pt-3" style="background-color: rgb(240, 237, 233);">
+    <ul class="list-group" *ngFor="let menu of groupMenu">
+      <div [routerLink]="['todo',menu.menu_init]" class="list-group-item {{ menu.is_active }}">
+        <div class="row">
+          <div class="col-1">></div>
+          <div class="col-2">{{ menu.nama_menu}}</div>
+        </div>
+      </div>
+    </ul>
+  </div>
+  <div class="col-5 pt-3">
+    <ul class="list-group">
+      <router-outlet></router-outlet>
+    </ul>
+  </div>
+  <div class="col-4">
+    <ul class="list-group">
+      <li class="list-group-item active">Active item</li>
+      <li class="list-group-item">Second item</li>
+      <li class="list-group-item">Third item</li>
+    </ul>
+  </div>
+</div>
